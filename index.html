@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Kuis ASAT Matematika Kelas 5 SD | Bangun Datar & Bangun Ruang</title>
-    <!-- Font Awesome untuk ikon analisis -->
+    <title>Kuis ASAT Matematika Kelas 5 SD | Kubus & Balok</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -15,25 +14,22 @@
 
         body {
             font-family: 'Segoe UI', 'Poppins', Roboto, system-ui, sans-serif;
-            background: linear-gradient(145deg, #f7f0e0 0%, #e8e0d0 100%);
+            background: linear-gradient(145deg, #eef4fa 0%, #dce3ed 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            margin: 0;
         }
 
         .quiz-container {
             max-width: 850px;
             width: 100%;
-            background: rgba(255, 251, 245, 0.95);
-            backdrop-filter: blur(12px);
-            background: #fffef7;
+            background: #ffffff;
             border-radius: 48px;
-            box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.15), 0 8px 20px -8px rgba(89, 62, 32, 0.2);
+            box-shadow: 0 25px 50px -10px rgba(0,0,0,0.15);
             padding: 2.5rem 2rem;
-            border: 2px solid #f3d27c;
+            border: 2px solid #a6c1e0;
         }
 
         h1 {
@@ -42,15 +38,14 @@
             gap: 12px;
             font-size: 2.2rem;
             font-weight: 700;
-            color: #4b2e1a;
+            color: #1a3a5c;
             margin-bottom: 0.5rem;
-            background: #fceeca;
+            background: #d9e9ff;
             padding: 0.8rem 1.4rem;
             border-radius: 100px;
-            letter-spacing: -0.3px;
         }
         h1 i {
-            color: #c9772e;
+            color: #2b5b8c;
             font-size: 2.2rem;
         }
 
@@ -61,16 +56,15 @@
             margin-bottom: 2rem;
             flex-wrap: wrap;
             gap: 15px;
-            background: #f7eedb;
+            background: #e7f0fb;
             border-radius: 30px;
             padding: 0.8rem 1.8rem;
-            color: #4e3a28;
+            color: #1e3b5a;
             font-weight: 600;
             font-size: 1.1rem;
         }
-
         .progress-badge {
-            background: #d78c3b;
+            background: #2b5b8c;
             color: white;
             padding: 6px 18px;
             border-radius: 30px;
@@ -89,17 +83,16 @@
 
         .question-card {
             background: #ffffff;
-            border: 1px solid #efdbc6;
+            border: 1px solid #c9daea;
             border-radius: 32px;
             padding: 1.4rem 1.8rem;
-            box-shadow: 0 10px 18px -10px rgba(140, 90, 40, 0.1);
+            box-shadow: 0 10px 18px -10px rgba(30, 60, 100, 0.1);
             transition: all 0.2s ease;
-            border-left: 10px solid #ebb35c;
+            border-left: 10px solid #5884b9;
         }
-
         .question-card:hover {
-            border-left-color: #c9772e;
-            box-shadow: 0 16px 24px -10px rgba(180, 110, 30, 0.18);
+            border-left-color: #2b5b8c;
+            box-shadow: 0 16px 24px -10px rgba(20, 50, 90, 0.18);
         }
 
         .question-header {
@@ -109,7 +102,7 @@
             margin-bottom: 1.2rem;
         }
         .q-num {
-            background: #b6916b;
+            background: #4f7299;
             color: white;
             font-weight: 700;
             width: 34px;
@@ -123,7 +116,7 @@
         .q-text {
             font-weight: 650;
             font-size: 1.18rem;
-            color: #2c241a;
+            color: #142b42;
             flex: 1;
         }
 
@@ -139,19 +132,19 @@
             gap: 12px;
             padding: 8px 12px;
             border-radius: 16px;
-            background: #fdf9f0;
+            background: #f4f8fd;
             transition: background 0.15s;
             cursor: pointer;
-            border: 1px solid #f1ddc0;
+            border: 1px solid #cbddec;
         }
         .option-item:hover {
-            background: #fae8ce;
+            background: #e1ecf9;
         }
         .option-item input[type="radio"] {
             appearance: none;
             width: 20px;
             height: 20px;
-            border: 2px solid #b48b5a;
+            border: 2px solid #4a6e93;
             border-radius: 50%;
             margin: 0;
             display: grid;
@@ -165,8 +158,8 @@
             height: 10px;
             border-radius: 50%;
             transform: scale(0);
-            transition: 0.15s transform ease-in-out;
-            box-shadow: inset 1em 1em #c2611d;
+            transition: 0.15s transform;
+            box-shadow: inset 1em 1em #1f5080;
         }
         .option-item input[type="radio"]:checked::before {
             transform: scale(1);
@@ -179,10 +172,9 @@
             justify-content: center;
             margin-top: 15px;
         }
-
         .btn {
             border: none;
-            background: #d78c3b;
+            background: #2b5b8c;
             color: white;
             font-weight: 700;
             font-size: 1.1rem;
@@ -192,64 +184,58 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            letter-spacing: 0.4px;
             transition: 0.2s;
-            box-shadow: 0 8px 18px -6px #b57a40;
-            border: 1px solid #e7a55b;
+            box-shadow: 0 8px 18px -6px #1b3f5e;
+            border: 1px solid #5682b0;
         }
         .btn:hover {
-            background: #b6662c;
-            box-shadow: 0 10px 20px -4px #9b5922;
+            background: #1a3f60;
         }
         .btn-outline {
             background: transparent;
-            color: #5e3c1c;
-            border: 2px solid #d9a066;
+            color: #1e3b5a;
+            border: 2px solid #5884b9;
             box-shadow: none;
         }
         .btn-outline:hover {
-            background: #f8e7d0;
-            color: #3d2b17;
+            background: #e7f0fb;
         }
 
         .result-panel {
             margin-top: 2.2rem;
-            background: #faf2e2;
+            background: #f0f6fe;
             border-radius: 36px;
             padding: 1.6rem 2rem;
-            border: 2px dashed #c59a6b;
+            border: 2px dashed #6d93c2;
         }
-
         .score-display {
             font-size: 2.5rem;
             font-weight: 800;
-            color: #7b4a1e;
+            color: #153b5c;
             display: flex;
             align-items: center;
             gap: 12px;
             justify-content: center;
         }
-
         .analysis-box {
-            background: #fff7ea;
+            background: #ffffff;
             border-radius: 28px;
             padding: 1.4rem;
             margin-top: 1.6rem;
-            border: 1px solid #e7cd9e;
+            border: 1px solid #b6ceef;
         }
-
         .topic-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 10px 0;
-            border-bottom: 1px dotted #d8b587;
+            border-bottom: 1px dotted #a3bbd9;
         }
         .topic-item:last-child {
             border-bottom: none;
         }
         .weak-tag {
-            background: #f7c5a8;
+            background: #f9cdb5;
             color: #632c0b;
             border-radius: 25px;
             padding: 4px 18px;
@@ -257,41 +243,29 @@
             font-size: 0.9rem;
         }
         .good-tag {
-            background: #c7e0b0;
-            color: #2a4b1a;
+            background: #b7d9ae;
+            color: #1e4a17;
             border-radius: 25px;
             padding: 4px 18px;
         }
         hr {
-            border: 1px solid #efd6b0;
+            border: 1px solid #cddef5;
             margin: 16px 0;
-        }
-
-        @media (max-width: 550px) {
-            .quiz-container {
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 1.8rem;
-            }
         }
     </style>
 </head>
 <body>
     <div class="quiz-container">
         <h1>
-            <i class="fas fa-cubes"></i> Kuis ASAT Matematika
+            <i class="fas fa-cube"></i> Kuis Kubus & Balok
         </h1>
         <div class="subtitle">
-            <span><i class="fas fa-shapes"></i> Bangun Datar & Bangun Ruang • Kelas 5 SD</span>
+            <span><i class="fas fa-cubes"></i> Bangun Ruang • Kelas 5 SD</span>
             <span class="progress-badge"><i class="far fa-clock"></i> 20 Soal Pilihan Ganda</span>
         </div>
 
         <form id="quizForm">
-            <div class="questions-wrapper" id="questionsContainer">
-                <!-- Soal akan dirender melalui JavaScript -->
-            </div>
-
+            <div class="questions-wrapper" id="questionsContainer"></div>
             <div class="btn-group">
                 <button type="button" class="btn" id="submitBtn"><i class="fas fa-check-circle"></i> Kumpulkan & Lihat Skor</button>
                 <button type="button" class="btn btn-outline" id="resetBtn"><i class="fas fa-redo-alt"></i> Ulangi Kuis</button>
@@ -306,142 +280,144 @@
 
     <script>
         (function() {
-            // ---- BANK SOAL (20 soal) + kunci & topik ----
+            // BANK SOAL KHUSUS KUBUS DAN BALOK (20 soal)
             const questions = [
                 {   // 1
-                    text: "Bangun ruang yang memiliki 6 sisi berbentuk persegi yang sama besar adalah …",
-                    options: ["Balok", "Kubus", "Limas segi empat", "Prisma segitiga"],
-                    correct: 1, // index 0-based
-                    topic: "sifat-bangun-ruang"
+                    text: "Bangun ruang yang semua sisinya berbentuk persegi dan sama besar disebut …",
+                    options: ["Balok", "Kubus", "Limas segi empat", "Prisma"],
+                    correct: 1,
+                    topic: "sifat-kubus"
                 },
                 {   // 2
-                    text: "Jumlah rusuk pada bangun ruang kubus adalah …",
+                    text: "Jumlah rusuk pada sebuah kubus adalah …",
                     options: ["10", "12", "14", "16"],
                     correct: 1,
-                    topic: "sifat-bangun-ruang"
+                    topic: "sifat-kubus"
                 },
                 {   // 3
                     text: "Volume kubus yang panjang rusuknya 6 cm adalah … cm³.",
                     options: ["216", "226", "246", "256"],
                     correct: 0,
-                    topic: "volume-kubus-balok"
+                    topic: "volume-kubus"
                 },
                 {   // 4
+                    text: "Balok memiliki … pasang sisi yang berhadapan sama besar.",
+                    options: ["2", "3", "4", "5"],
+                    correct: 1,
+                    topic: "sifat-balok"
+                },
+                {   // 5
                     text: "Sebuah balok memiliki panjang 15 cm, lebar 7 cm, dan tinggi 11 cm. Volume balok tersebut adalah … cm³.",
                     options: ["1.155", "1.165", "1.255", "1.355"],
                     correct: 0,
-                    topic: "volume-kubus-balok"
-                },
-                {   // 5
-                    text: "Bangun datar yang memiliki 4 sisi sama panjang dan 4 sudut siku-siku disebut …",
-                    options: ["Persegi panjang", "Belah ketupat", "Persegi", "Jajargenjang"],
-                    correct: 2,
-                    topic: "sifat-bangun-datar"
+                    topic: "volume-balok"
                 },
                 {   // 6
-                    text: "Jumlah simetri lipat pada bangun persegi panjang adalah …",
-                    options: ["1", "2", "3", "4"],
-                    correct: 1,
-                    topic: "simetri"
-                },
-                {   // 7
-                    text: "Bangun datar yang memiliki tepat sepasang sisi sejajar disebut …",
-                    options: ["Jajargenjang", "Trapesium", "Layang-layang", "Belah ketupat"],
-                    correct: 1,
-                    topic: "sifat-bangun-datar"
-                },
-                {   // 8
-                    text: "Keliling persegi yang panjang sisinya 12 cm adalah … cm.",
-                    options: ["24", "36", "48", "60"],
-                    correct: 2,
-                    topic: "keliling-luas-datar"
-                },
-                {   // 9
-                    text: "Luas segitiga dengan alas 10 cm dan tinggi 8 cm adalah … cm².",
-                    options: ["80", "40", "60", "20"],
-                    correct: 1,
-                    topic: "keliling-luas-datar"
-                },
-                {   // 10
-                    text: "Sebuah taman berbentuk persegi panjang dengan panjang 20 m dan lebar 14 m. Luas taman tersebut adalah … m².",
-                    options: ["280", "300", "260", "320"],
-                    correct: 0,
-                    topic: "keliling-luas-datar"
-                },
-                {   // 11
-                    text: "Volume balok yang memiliki ukuran panjang 10 cm, lebar 4 cm, dan tinggi 6 cm adalah … cm³.",
-                    options: ["200", "240", "260", "280"],
-                    correct: 1,
-                    topic: "volume-kubus-balok"
-                },
-                {   // 12
-                    text: "Bangun ruang yang alasnya berbentuk lingkaran dan memiliki satu titik puncak adalah …",
-                    options: ["Tabung", "Kerucut", "Bola", "Limas segitiga"],
-                    correct: 1,
-                    topic: "sifat-bangun-ruang"
-                },
-                {   // 13
-                    text: "Banyak titik sudut pada bangun limas segi empat adalah …",
-                    options: ["4", "5", "6", "8"],
-                    correct: 1,
-                    topic: "sifat-bangun-ruang"
-                },
-                {   // 14
                     text: "Luas permukaan kubus dengan panjang rusuk 5 cm adalah … cm².",
                     options: ["100", "125", "150", "200"],
                     correct: 2,
-                    topic: "luas-permukaan"
+                    topic: "luas-permukaan-kubus"
                 },
-                {   // 15
-                    text: "Sebuah akuarium berbentuk balok memiliki volume 1.800 dm³. Jika panjang 15 dm dan lebar 10 dm, maka tingginya adalah … dm.",
-                    options: ["10", "12", "14", "15"],
+                {   // 7
+                    text: "Sebuah kubus memiliki volume 512 cm³. Panjang rusuk kubus tersebut adalah … cm.",
+                    options: ["7", "8", "9", "10"],
                     correct: 1,
-                    topic: "volume-kubus-balok"
+                    topic: "volume-kubus"
                 },
-                {   // 16
-                    text: "Bangun datar yang kedua diagonalnya saling berpotongan tegak lurus dan memiliki 4 sisi sama panjang adalah …",
-                    options: ["Persegi panjang", "Belah ketupat", "Jajargenjang", "Trapesium"],
+                {   // 8
+                    text: "Banyak titik sudut pada balok adalah …",
+                    options: ["6", "8", "10", "12"],
                     correct: 1,
-                    topic: "sifat-bangun-datar"
+                    topic: "sifat-balok"
                 },
-                {   // 17
-                    text: "Keliling sebuah lingkaran dengan diameter 14 cm (π = 22/7) adalah … cm.",
-                    options: ["44", "66", "88", "22"],
-                    correct: 0,
-                    topic: "keliling-luas-datar"
+                {   // 9
+                    text: "Rumus untuk menghitung volume balok adalah …",
+                    options: ["p × l", "p × l × t", "4 × p × l", "2 × (p + l + t)"],
+                    correct: 1,
+                    topic: "volume-balok"
                 },
-                {   // 18
-                    text: "Perbedaan utama antara balok dan kubus terletak pada …",
+                {   // 10
+                    text: "Perbedaan utama antara kubus dan balok terletak pada …",
                     options: ["Jumlah rusuk", "Jumlah sisi", "Bentuk sisi-sisinya", "Jumlah titik sudut"],
                     correct: 2,
-                    topic: "sifat-bangun-ruang"
+                    topic: "sifat-kubus-dan-balok"
+                },
+                {   // 11
+                    text: "Luas permukaan balok yang berukuran panjang 10 cm, lebar 4 cm, dan tinggi 6 cm adalah … cm².",
+                    options: ["200", "240", "248", "280"],
+                    correct: 2,
+                    topic: "luas-permukaan-balok"
+                },
+                {   // 12
+                    text: "Akuarium berbentuk balok memiliki volume 1.800 dm³. Jika panjangnya 15 dm dan lebarnya 10 dm, maka tingginya … dm.",
+                    options: ["10", "12", "14", "15"],
+                    correct: 1,
+                    topic: "volume-balok"
+                },
+                {   // 13
+                    text: "Sebuah kubus besar tersusun dari 27 kubus kecil berukuran rusuk 2 cm. Volume kubus besar adalah … cm³.",
+                    options: ["54", "108", "216", "432"],
+                    correct: 2,
+                    topic: "volume-kubus"
+                },
+                {   // 14
+                    text: "Berikut yang bukan jaring-jaring kubus adalah … (pilih yang salah)",
+                    options: ["(gambar 1 benar)", "(gambar 2 benar)", "(gambar 3 benar)", "(gambar 4 tidak bisa membentuk kubus)"],
+                    correct: 3,
+                    topic: "jaring-jaring"
+                },
+                {   // 15
+                    text: "Benda di sekitar kita yang menyerupai balok adalah …",
+                    options: ["Bola basket", "Kotak sepatu", "Kaleng susu", "Topi ulang tahun"],
+                    correct: 1,
+                    topic: "aplikasi"
+                },
+                {   // 16
+                    text: "Jika panjang rusuk sebuah kubus menjadi dua kali lipat, maka volumenya menjadi … kali semula.",
+                    options: ["2", "4", "6", "8"],
+                    correct: 3,
+                    topic: "volume-kubus"
+                },
+                {   // 17
+                    text: "Luas permukaan balok dengan panjang 20 cm, lebar 14 cm, dan tinggi 10 cm adalah … cm².",
+                    options: ["1.000", "1.120", "1.240", "1.360"],
+                    correct: 2,
+                    topic: "luas-permukaan-balok"
+                },
+                {   // 18
+                    text: "Sebuah kubus memiliki panjang rusuk 9 cm. Volume kubus tersebut adalah … cm³.",
+                    options: ["81", "486", "729", "900"],
+                    correct: 2,
+                    topic: "volume-kubus"
                 },
                 {   // 19
-                    text: "Luas gabungan bangun datar yang terdiri dari persegi (sisi 10 cm) dan segitiga (alas 10 cm, tinggi 6 cm) yang menempel pada salah satu sisinya adalah … cm².",
-                    options: ["120", "130", "140", "160"],
-                    correct: 1, // 100 + 30 = 130
-                    topic: "keliling-luas-datar"
+                    text: "Balok dengan volume 120 cm³, panjang 8 cm, dan lebar 5 cm, maka tingginya … cm.",
+                    options: ["2", "3", "4", "5"],
+                    correct: 1,
+                    topic: "volume-balok"
                 },
                 {   // 20
-                    text: "Benda di sekitar kita yang menyerupai bangun ruang tabung adalah …",
-                    options: ["Kotak sepatu", "Kaleng susu", "Bola basket", "Topi ulang tahun"],
-                    correct: 1,
-                    topic: "aplikasi-bangun-ruang"
+                    text: "Sebuah bak mandi berbentuk kubus dengan rusuk 80 cm. Volume air yang dapat ditampung adalah … liter. (1 dm³ = 1 liter)",
+                    options: ["512", "480", "5120", "384"],
+                    correct: 0,
+                    topic: "soal-cerita"
                 }
             ];
 
-            // Topik mapping untuk analisis
+            // Pemetaan topik (hanya kubus & balok)
             const topicLabels = {
-                "sifat-bangun-datar": "Sifat Bangun Datar",
-                "sifat-bangun-ruang": "Sifat Bangun Ruang",
-                "simetri": "Simetri Lipat & Putar",
-                "keliling-luas-datar": "Keliling & Luas Bangun Datar",
-                "volume-kubus-balok": "Volume Kubus & Balok",
-                "luas-permukaan": "Luas Permukaan",
-                "aplikasi-bangun-ruang": "Aplikasi Bangun Ruang"
+                "sifat-kubus": "Sifat Kubus",
+                "sifat-balok": "Sifat Balok",
+                "sifat-kubus-dan-balok": "Perbedaan Kubus & Balok",
+                "volume-kubus": "Volume Kubus",
+                "volume-balok": "Volume Balok",
+                "luas-permukaan-kubus": "Luas Permukaan Kubus",
+                "luas-permukaan-balok": "Luas Permukaan Balok",
+                "jaring-jaring": "Jaring-jaring",
+                "aplikasi": "Aplikasi",
+                "soal-cerita": "Soal Cerita"
             };
 
-            // Render soal ke HTML
             const container = document.getElementById('questionsContainer');
             function renderQuestions() {
                 if (!container) return;
@@ -463,12 +439,10 @@
                 container.innerHTML = html;
             }
 
-            // Hitung skor & analisis
             function calculateResults() {
                 let correctCount = 0;
-                const topicStats = {}; // { topic: { total, correct } }
+                const topicStats = {};
 
-                // inisialisasi topik
                 questions.forEach(q => {
                     if (!topicStats[q.topic]) {
                         topicStats[q.topic] = { total: 0, correct: 0 };
@@ -476,11 +450,8 @@
                     topicStats[q.topic].total++;
                 });
 
-                // periksa setiap soal
-                const totalQuestions = questions.length;
-                const wrongDetails = []; // untuk analisis per soal salah
-
-                for (let i = 0; i < totalQuestions; i++) {
+                const wrongDetails = [];
+                for (let i = 0; i < questions.length; i++) {
                     const q = questions[i];
                     const selectedRadio = document.querySelector(`input[name="q${i}"]:checked`);
                     const isCorrect = selectedRadio && parseInt(selectedRadio.value, 10) === q.correct;
@@ -489,7 +460,6 @@
                         correctCount++;
                         topicStats[q.topic].correct++;
                     } else {
-                        // catat soal salah
                         wrongDetails.push({
                             number: i+1,
                             topic: q.topic,
@@ -498,16 +468,9 @@
                         });
                     }
                 }
-
-                return {
-                    score: correctCount,
-                    total: totalQuestions,
-                    topicStats,
-                    wrongDetails
-                };
+                return { score: correctCount, total: questions.length, topicStats, wrongDetails };
             }
 
-            // Tampilkan hasil
             function displayResults(results) {
                 const resultPanel = document.getElementById('resultPanel');
                 const scoreText = document.getElementById('scoreText');
@@ -516,20 +479,19 @@
 
                 resultPanel.style.display = 'block';
                 const percent = Math.round((results.score / results.total) * 100);
-                scoreText.innerHTML = `📊 Skor Kamu: <span style="color:#9b4b1c;">${results.score}</span> / ${results.total}  (${percent}%)`;
+                scoreText.innerHTML = `📊 Skor Kamu: <span style="color:#1f5080;">${results.score}</span> / ${results.total}  (${percent}%)`;
 
-                // Bangun analisis per topik
-                let analysisHtml = `<h3 style="margin-bottom:12px;color:#4e3622;"><i class="fas fa-chart-bar"></i> Analisis Penguasaan Materi</h3>`;
-                analysisHtml += `<p style="margin-bottom:15px;color:#4b3a28;">Kamu perlu memperhatikan topik dengan performa rendah:</p>`;
+                let analysisHtml = `<h3 style="margin-bottom:12px;color:#153b5c;"><i class="fas fa-chart-bar"></i> Analisis Penguasaan Materi Kubus & Balok</h3>`;
+                analysisHtml += `<p style="margin-bottom:15px;color:#1e3b5a;">Perhatikan topik yang masih perlu ditingkatkan:</p>`;
 
                 const topicEntries = Object.entries(results.topicStats);
-                topicEntries.sort((a,b) => (a[1].correct/a[1].total) - (b[1].correct/b[1].total)); // terlemah di atas
+                topicEntries.sort((a,b) => (a[1].correct/a[1].total) - (b[1].correct/b[1].total));
 
                 topicEntries.forEach(([topicKey, stat]) => {
                     const label = topicLabels[topicKey] || topicKey;
                     const correct = stat.correct;
                     const total = stat.total;
-                    const weak = correct < total;  // jika tidak sempurna dianggap perlu perhatian
+                    const weak = correct < total;
                     const tagClass = weak ? 'weak-tag' : 'good-tag';
                     const icon = weak ? '<i class="fas fa-exclamation-triangle"></i>' : '<i class="fas fa-check-circle"></i>';
                     analysisHtml += `
@@ -540,36 +502,31 @@
                     `;
                 });
 
-                // Daftar soal yang salah
                 if (results.wrongDetails.length > 0) {
-                    analysisHtml += `<hr><h4 style="margin:14px 0 8px; color:#5e3c1c;"><i class="fas fa-list-ul"></i> Soal yang Perlu Dipelajari Lagi:</h4>`;
+                    analysisHtml += `<hr><h4 style="margin:14px 0 8px; color:#153b5c;"><i class="fas fa-list-ul"></i> Soal yang Perlu Dipelajari Lagi:</h4>`;
                     results.wrongDetails.forEach(item => {
                         analysisHtml += `
-                            <div style="background:#fceee0; border-radius:18px; padding:10px 16px; margin-bottom:10px;">
+                            <div style="background:#eaf0fb; border-radius:18px; padding:10px 16px; margin-bottom:10px;">
                                 <strong>No. ${item.number}</strong> – ${item.question}<br>
-                                <span style="color:#2e5c1e;">✔ Jawaban benar: <strong>${item.correctAnswer}</strong></span>
+                                <span style="color:#1e5a2e;">✔ Jawaban benar: <strong>${item.correctAnswer}</strong></span>
                             </div>
                         `;
                     });
                 } else {
-                    analysisHtml += `<hr><div style="text-align:center;color:#2c5e2e;font-weight:bold;margin-top:12px;">🎉 Luar biasa! Semua soal terjawab dengan benar.</div>`;
+                    analysisHtml += `<hr><div style="text-align:center;color:#1e5a2e;font-weight:bold;margin-top:12px;">🎉 Luar biasa! Semua soal terjawab dengan benar.</div>`;
                 }
 
                 analysisContent.innerHTML = analysisHtml;
-                // Scroll ke hasil
                 resultPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
 
-            // Validasi apakah semua soal terjawab
             function allQuestionsAnswered() {
                 for (let i = 0; i < questions.length; i++) {
-                    const selected = document.querySelector(`input[name="q${i}"]:checked`);
-                    if (!selected) return false;
+                    if (!document.querySelector(`input[name="q${i}"]:checked`)) return false;
                 }
                 return true;
             }
 
-            // Event handler
             document.getElementById('submitBtn').addEventListener('click', function() {
                 if (!allQuestionsAnswered()) {
                     alert('⚠️ Harap jawab semua 20 soal sebelum mengumpulkan!');
@@ -580,17 +537,13 @@
             });
 
             document.getElementById('resetBtn').addEventListener('click', function() {
-                // Reset semua pilihan radio
                 const allRadios = document.querySelectorAll('input[type="radio"]');
                 allRadios.forEach(radio => radio.checked = false);
-                // Sembunyikan panel hasil
                 const resultPanel = document.getElementById('resultPanel');
                 if (resultPanel) resultPanel.style.display = 'none';
-                // Scroll ke atas kuis
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            // Inisialisasi render soal
             renderQuestions();
         })();
     </script>
