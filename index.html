@@ -19,7 +19,6 @@
             color: #2c3e50;
         }
 
-        /* Upload Area Styling */
         .upload-container {
             background-color: #fff;
             border: 2px dashed #3498db;
@@ -46,14 +45,12 @@
             display: none;
         }
 
-        /* Grid Layout for Photos */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             gap: 15px;
         }
 
-        /* Card Styling */
         .photo-card {
             background: #fff;
             border-radius: 8px;
@@ -85,7 +82,6 @@
             margin-bottom: 10px;
         }
 
-        /* Copy Button Styling */
         .copy-btn {
             width: 100%;
             background-color: #3498db;
@@ -126,7 +122,6 @@
 
         fileInput.addEventListener('change', handleFiles);
 
-        // Processes files sequentially to keep original order perfectly
         async function handleFiles(e) {
             const files = Array.from(e.target.files).filter(file => file.type.startsWith('image/'));
             
@@ -138,8 +133,7 @@
                     console.error("Error reading file:", err);
                 }
             }
-            
-            fileInput.value = ''; // Reset input to allow re-uploads
+            fileInput.value = ''; 
         }
 
         function readFileAsDataURL(file) {
@@ -167,9 +161,14 @@
             button.innerText = 'Copy Image';
 
             button.addEventListener('click', async () => {
+                // Double check if browser supports clipboard natively
+                if (!navigator.clipboard || !window.ClipboardItem) {
+                    alert('Your mobile browser is blocking clipboard access. Try opening this link directly inside Google Chrome instead of an in-app browser.');
+                    return;
+                }
+
                 try {
-                    // Modern clipboard logic (requires HTTPS)
-                    // We copy the raw image blob so your clipboard holds the actual photo
+                    // Modern direct blob clipboard writing
                     await navigator.clipboard.write([
                         new ClipboardItem({
                             [fileBlob.type]: fileBlob
@@ -185,8 +184,8 @@
                     }, 1500);
 
                 } catch (err) {
-                    console.error('Clipboard error:', err);
-                    alert('Clipboard access blocked. Please ensure you are viewing this page through a secure online compiler link (HTTPS).');
+                    console.error('Clipboard error details:', err);
+                    alert('Failed to copy. Make sure you granted clipboard permissions to Chrome.');
                 }
             });
 
